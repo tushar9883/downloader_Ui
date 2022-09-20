@@ -120,18 +120,42 @@ class FacebookScreen extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            // Column(
-            //   children: [
-            //     ClipRRect(
-            //       borderRadius: BorderRadius.circular(10.r),
-            //       child: Image.asset(
-            //         'assets/images/bg.png',
-            //         height: 108.h,
-            //         width: 103.h,
-            //       ),
-            //     )
-            //   ],
-            // ),
+            Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(10.r),
+                  child: Image.asset(
+                    'assets/images/just.jpg',
+                    height: 108.h,
+                    width: 103.h,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                SizedBox(
+                  height: 8.h,
+                ),
+                Container(
+                  // height: 28.h,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 6.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Color(0xff2B62F6),
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  child: Text(
+                    'Download',
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.plusJakartaSans(
+                      fontSize: 12.sp,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
