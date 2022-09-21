@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:splash/pages/home/items_page/facebook_screen.dart';
+import 'package:splash/pages/home/items_page/whatsapp_screen.dart';
 import 'package:splash/pages/home/widget/header.dart';
 
 class Homescreen extends StatelessWidget {
@@ -170,12 +171,27 @@ class Homescreen extends StatelessWidget {
                           return InkWell(
                             onTap: () {
                               print(data);
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const FacebookScreen(),
-                                ),
-                              );
+                              if (data == 'Facebook') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => FacebookScreen(),
+                                  ),
+                                );
+                              } else if (data == 'Whatsapp') {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => WhatsAppScreen(),
+                                  ),
+                                );
+                              }
+                              // Navigator.push(
+                              //   context,
+                              //   MaterialPageRoute(
+                              //     builder: (context) => FacebookScreen(),
+                              //   ),
+                              // );
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -195,11 +211,13 @@ class Homescreen extends StatelessWidget {
                                   SizedBox(
                                     height: 5.h,
                                   ),
-                                  Text(
-                                    '${items[index]['title']}',
-                                    style: GoogleFonts.plusJakartaSans(
-                                      fontSize: 12.sp,
-                                      fontWeight: FontWeight.bold,
+                                  Expanded(
+                                    child: Text(
+                                      '${items[index]['title']}',
+                                      style: GoogleFonts.plusJakartaSans(
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ],
